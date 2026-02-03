@@ -1,0 +1,44 @@
+Arial
+Arial Nova
+Bahnschrift
+Caladea
+Calibri
+Candara
+Carlito
+Comic Sans MS
+Consolas
+Constantia
+Corbel
+Courier New
+Franklin Gothic Medium
+Gabriola
+Gentium Basic
+Gentium Book Basic
+Georgia
+Georgia Pro
+Gill Sans Nova
+Impact
+Ink Free
+Liberation Mono
+Liberation Sans
+Liberation Serif
+Linux Biolinum G
+Linux Libertine Display G
+Linux Libertine G
+Lucida Console
+Lucida Sans Unicode
+Microsoft Sans Serif
+Neue Haas Grotesk Text Pro
+Noto Sans
+Noto Serif
+Palatino Linotype
+Rockwell Nova
+Rubik
+Segoe Print
+Segoe Script
+Segoe UI
+Tahoma
+Times New Roman
+Trebuchet MS
+Verdana
+Verdana Pro
