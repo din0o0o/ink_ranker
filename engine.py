@@ -1,11 +1,15 @@
 import configparser
 import json
+import sys
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 from fontTools.ttLib import TTFont
 from docx import Document
 
-BASE_DIR = Path(__file__).parent
+if getattr(sys, "frozen", False):
+    BASE_DIR = Path(sys.executable).parent
+else:
+    BASE_DIR = Path(__file__).parent
 CONFIG_FILE = BASE_DIR / "config.ini"
 
 _DEFAULTS = {
