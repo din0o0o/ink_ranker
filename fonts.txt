@@ -1,44 +1,339 @@
+Adobe Jenson
+Agency FB
+Akzidenz-Grotesk
+Albertus
+Aldus
+Alexandria
+Algerian
+Amelia
+American Scribe
+American Typewriter
+AMS Euler
+Andalé Mono
+Andalé Sans
+Antiqua
+Antique Olive
+Apple Chancery
+Aptos
+Archer
+Archivo
 Arial
 Arial Nova
+Arial Unicode MS
+Arno
+Aster
+Athens
+Aurora
+Avant Garde Gothic
+Avenir
 Bahnschrift
+Balloon
+Bank Gothic
+Baskerville
+Bastard
+Bauer Bodoni
+Bauhaus
+Bell
+Bell Centennial
+Bell Gothic
+Belwe Roman
+Bembo
+Benguiat Gothic
+Berkeley Old Style
+Berlin Sans
+Bernhard Modern
+Bitstream Charter
+Bitstream Vera
+Bodoni
+Book Antiqua
+Bookman
+Brandon Grotesque
+Breitkopf Fraktur
+Brush Script
+Bulmer
 Caladea
+Caledonia
 Calibri
+Californian FB
+Calisto MT
+Cambria
 Candara
+Candida
+Capitals
 Carlito
+Cartier
+Casey
+Caslon
+Caslon Antique
+Centaur
+Century Gothic
+Century Schoolbook Monospace
+Century type family
+Charcoal
+Charis SIL
+Cheltenham
+Chicago
+Choc
+Cholla Slab
+City
+Clarendon
+Clearface
+Clearview
+Cloister Black
+Cochin
+Comic Sans
 Comic Sans MS
+Compacta
+Computer Modern
+Concrete Roman
 Consolas
 Constantia
+Cooper Black
+Copperplate Gothic
 Corbel
+Coronet
+Courier
 Courier New
+Curlz
+DejaVu Sans
+DejaVu Sans Mono
+DejaVu Serif
+Didone
+Didot
+DIN 1451
+Dom Casual
+Droid Sans
+Droid Sans Mono
+Droid Serif
+Dyslexie
+Ecofont
+Egyptienne
+Emerson
+Eras
+Espy Sans
+Esseltub
+Eurocrat
+Eurostile
+Everson Mono
+Fairfield
+Fat face
+Fette Fraktur
+FF Dax
+FF Meta
+FF Scala
+FF Scala Sans
+Fifteenth Century
+Fira Code
+Fira Mono
+Fira Sans
+Fixed
+Fixedsys
+Fletcher
+Folio
+Footlight
+Forte
+Fraktur
+Franklin Gothic
 Franklin Gothic Medium
+FreeSans
+Freight
+French Script
+Friz Quadrata
+Frutiger
+Futura
 Gabriola
+Galliard
+Garamond
+Gentium
 Gentium Basic
 Gentium Book Basic
+Geneva
 Georgia
 Georgia Pro
+Gill Sans
 Gill Sans Nova
+Gill Sans Schoolbook
+GNU FreeFont
+Gotham
+Goudy
+Goudy Old Style
+Grand Slang
+Granjon
+Gravura
+Guardian Egyptian
+Haettenschweiler
+Handel Gothic
+Helvetica
+Helvetica Neue
+Hightower Text
+Highway Gothic
+Hoefler Text
+HyperFont
+IBM Plex Mono
+IBM Plex Sans
+IBM Plex Serif
 Impact
+Imprint
+Inconsolata
+Industria
 Ink Free
+Inter
+Interstate
+Iosevka
+ITC Benguiat
+ITC Zapf Chancery
+Janson
+Joanna
+Johnston
+Jokerman
+Kabel
+Klavika
+Korinna
+Kuenstler Script
+Lato
+Legibility Group
+Letter Gothic
+Lexia
+Lexicon
 Liberation Mono
 Liberation Sans
+Liberation Sans Narrow
 Liberation Serif
+Linux Biolinum
 Linux Biolinum G
+Linux Libertine
 Linux Libertine Display G
 Linux Libertine G
+Literaturnaya
+Lucida
+Lucida Blackletter
+Lucida Bright
 Lucida Console
+Lucida Sans Typewriter
 Lucida Sans Unicode
+Lydian
+Matrix
+Melior
+Memphis
+Menlo
+Meta
+Microgramma
 Microsoft Sans Serif
+Miller
+Minion
+Mistral
+Modernised Old Style
+Monaco
+Monospace
+Monotype Corsiva
+Motorway
+Mrs Eaves
+Mrs. Eaves
+MS Sans Serif
+MS Serif
+Myriad
 Neue Haas Grotesk Text Pro
+Neutraface
+Neuzeit S
+New Johnston
+New York
+News Gothic
+Nilland
+Nimbus Mono L
+Nimbus Roman No. 9 L
+Nimbus Sans L
+Nordstern
 Noto Sans
 Noto Serif
+NPS Rawlinson Roadway
+OCR-A
+Old English Text
+Old English Text MT
+Open Sans
+Optima
+Overpass
+Palatino
 Palatino Linotype
+Papyrus
+Perpetua
+Plantagenet Cherokee
+Plantin
+PragmataPro
+Prestige
+Prestige Elite
+Product Sans
+ProFont
+Proxima Nova
+PT Fonts
+PT Sans
+Rail Alphabet
+Reem Kufi
+Requiem
+Roboto
+Roboto Mono
+Roboto Slab
+Rockwell
 Rockwell Nova
+Rotis
+Rotis Sans
 Rubik
+Sabon
+San Francisco
+Schadow
+Schwabacher
+Script
 Segoe Print
 Segoe Script
 Segoe UI
+Serifa
+Sistina
+Skeleton Antique
+Skia
+Souvenir
+Source Code Pro
+Source Sans Pro
+Source Serif
+SST
+Stempel Schneidler
+STIX Fonts project
+Sweden Sans
+Syntax
+System
 Tahoma
+Tannenberg
+Template Gothic
+Terminal
+Textualis
+Theano Didot
+Thesis Sans
+Theuerdank Fraktur
 Times New Roman
+Tiresias
+Toronto Subway
+Tower
+Trade Gothic
+Trajan
+Transport
 Trebuchet MS
+Trinité
+Trump Mediaeval
+Tw Cen MT
+Twentieth Century
+Ubuntu
+Ubuntu Mono
+Unica
+Univers
+University of California Old Style
+Utopia
+VAG Rounded
+Vera Sans
+Vera Sans Mono
+Vera Serif
 Verdana
 Verdana Pro
+Walbaum
+Wallau
+Wiesbaden Swing
+Windsor
+XITS font project
+Zapfino
