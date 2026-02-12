@@ -12,7 +12,8 @@ src/
 ├── fonts.txt                  ¤ List of >300 fonts.
 └── (output)                   ¤ Folder for scan ouput (.JSON, .docx)
 ```
-</br></br>
+</br></br></br>
+## $\color{#adf137}\text{Configuration}$ </br>
 $\color{#808080}\text{Python Dependencies:}$ Pillow (image rendering), fontTools (font metadata), python-docx (.docx output)</br></br>
 <code>config.ini</code> user configuration with default values:                   
 ```
