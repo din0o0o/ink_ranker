@@ -9,6 +9,8 @@ from engine import (
     process_font, compute_relative, save_json, save_docx, ensure_config,
 )
 
+__version__ = "1.0"
+
 GWL_EXSTYLE = -20
 WS_EX_APPWINDOW = 0x00040000
 WS_EX_TOOLWINDOW = 0x00000080
@@ -43,7 +45,7 @@ class ProgressBar(tk.Canvas):
 class InkRankerApp(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("InkRanker")
+        self.title(f"InkRanker v{__version__}")
         self.overrideredirect(True)
         self.resizable(False, False)
         self._busy = False
