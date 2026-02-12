@@ -4,7 +4,7 @@ Approximates ink usage across fonts by rendering a sample text and measuring pix
 </br></br></br>
 ## $\color{#adf137}\text{File Structure}$ </br>
 ```
-ink_ranker/
+src/
 ├── main.py                    ¤ GUI, threading.
 ├── engine.py                  ¤ Parsing fonts, rendering, counting dark pixels.
 ├── config.ini                 ¤ User settings.
