@@ -1,8 +1,10 @@
-# $\color{#ffeb3b}\{\textbf{InkRanker}}$ 1.0
-[Download: InkRanker.zip ](https://github.com/din0o0o/ink_ranker/blob/965f5f12a283127e69b056201a5277f83179e416/InkRanker.zip) — 23.3 MB </br></br>
-Approximates ink usage across fonts by rendering a sample text and measuring pixel coverage.
-</br></br></br>
-## $\color{#adf137}\text{File Structure}$ </br>
+[![Download InkRanker](https://img.shields.io/github/v/release/din0o0o/ink_ranker?label=Download&{color=ffeb3b&labelColor=2d2d2d&style=for-the-badge)](https://github.com/din0o0o/ink_ranker/releases/latest)
+
+> # $\color{#ffeb3b}\{\textbf{InkRanker}}$ 
+</br>
+
+## $\color{#adf137}\textbf{File Structure}$ </br>
+
 ```
 src/
 ├── main.py                    ¤ GUI, threading.
@@ -12,10 +14,15 @@ src/
 ├── fonts.txt                  ¤ List of >300 fonts.
 └── (output)                   ¤ Folder for scan ouput (.JSON, .docx)
 ```
-</br></br></br>
+
+#### $\color{#fff8dc}\text{Build from source:}$
+```bash
+pyinstaller InkRanker.spec
+```
+
+</br></br>
 ## $\color{#adf137}\text{Configuration}$ </br>
-$\color{#808080}\text{Python Dependencies:}$ Pillow (image rendering), fontTools (font metadata), python-docx (.docx output)</br></br>
-<code>config.ini</code> user configuration with default values:                   
+<code>config.ini</code> $\color{#fff8dc}\text{user configuration with default values:}$               
 ```
 dpi                            ¤ Render resolution (300)
 font_size                      ¤ Point size (12)
@@ -27,7 +34,8 @@ sample_text                    ¤ Text for rendering (\sample_text.txt)
 fonts_list                     ¤ Font list (\fonts.txt)
 output_dir                     ¤ Output directory (\output)
 ```
-</br></br></br>
+
+</br></br>
 ## $\color{#adf137}\text{Procedure}$ </br>
 <ol>
 1. Reads user font directory, matches with <code>fonts.txt</code> </br>
