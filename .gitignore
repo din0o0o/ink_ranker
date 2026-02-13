@@ -1,8 +1,7 @@
-output/
-quick-push.bat
 .idea/
-/CLAUDE.md
-/sample_text.docx
-/scratch_gui_plan.md
+build/
+dist/
+desktop.ini
+Thumbs.db
 /.claude/
-/InkRanker.spec
+/CLAUDE.md

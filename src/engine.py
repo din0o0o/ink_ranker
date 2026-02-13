@@ -1,65 +1,43 @@
-import configparser
 import json
 import sys
+import time
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 from fontTools.ttLib import TTFont
 from docx import Document
+from settings import (
+    DPI, FONT_SIZE, DARKNESS_THRESHOLD,
+    BASELINE_FONT, FONTS_DIR, LINE_SPACING_FACTOR,
+)
 
 if getattr(sys, "frozen", False):
+    BUNDLE_DIR = Path(getattr(sys, '_MEIPASS', '.'))
     BASE_DIR = Path(sys.executable).parent
 else:
+    BUNDLE_DIR = Path(__file__).parent
     BASE_DIR = Path(__file__).parent
-CONFIG_FILE = BASE_DIR / "config.ini"
 
-_DEFAULTS = {
-    "dpi": "300",
-    "font_size": "12",
-    "darkness_threshold": "200",
-    "baseline_font": "Arial",
-    "fonts_dir": r"C:\Windows\Fonts",
-    "line_spacing_factor": "1.15",
-    "sample_text": "sample_text.txt",
-    "fonts_list": "fonts.txt",
-    "output_dir": "output",
-}
-
-
-def ensure_config():
-    if CONFIG_FILE.exists():
-        return
-    cp = configparser.ConfigParser()
-    cp["Settings"] = _DEFAULTS
-    with open(CONFIG_FILE, "w") as f:
-        cp.write(f)
+FONTS_DIR = Path(FONTS_DIR)
 
 
 def load_config():
-    ensure_config()
-    cp = configparser.ConfigParser()
-    cp.read(CONFIG_FILE)
-    s = cp["Settings"]
-    dpi = int(s.get("dpi", _DEFAULTS["dpi"]))
-    font_size = int(s.get("font_size", _DEFAULTS["font_size"]))
-    margin = int(1 * dpi)
-    output_dir = BASE_DIR / s.get("output_dir", _DEFAULTS["output_dir"])
+    margin = DPI
+    font_size_px = int(FONT_SIZE * DPI / 72)
     return {
-        "dpi": dpi,
-        "font_size": font_size,
-        "darkness_threshold": int(s.get("darkness_threshold", _DEFAULTS["darkness_threshold"])),
-        "baseline_font": s.get("baseline_font", _DEFAULTS["baseline_font"]),
-        "fonts_dir": Path(s.get("fonts_dir", _DEFAULTS["fonts_dir"])),
-        "line_spacing_factor": float(s.get("line_spacing_factor", _DEFAULTS["line_spacing_factor"])),
-        "sample_text": BASE_DIR / s.get("sample_text", _DEFAULTS["sample_text"]),
-        "fonts_list": BASE_DIR / s.get("fonts_list", _DEFAULTS["fonts_list"]),
-        "output_dir": output_dir,
-        "results_json": output_dir / "results.json",
-        "results_docx": output_dir / "results.docx",
-        "page_width": int(8.5 * dpi),
-        "page_height": int(11 * dpi),
+        "dpi": DPI,
+        "font_size_px": font_size_px,
+        "darkness_threshold": DARKNESS_THRESHOLD,
+        "baseline_font": BASELINE_FONT,
+        "fonts_dir": FONTS_DIR,
+        "line_spacing_factor": LINE_SPACING_FACTOR,
+        "sample_text": BUNDLE_DIR / "sample.txt",
+        "fonts_list": BUNDLE_DIR / "fonts.txt",
+        "results_json": BASE_DIR / "results.json",
+        "results_docx": BASE_DIR / "results.docx",
+        "page_width": int(8.5 * DPI),
+        "page_height": int(11 * DPI),
         "margin": margin,
-        "text_width": int(8.5 * dpi) - 2 * margin,
-        "font_size_px": int(font_size * dpi / 72),
+        "text_width": int(8.5 * DPI) - 2 * margin,
     }
 
 
@@ -97,6 +75,9 @@ def find_fonts(cfg, names):
             except Exception:
                 continue
             found[family] = (p, idx)
+        time.sleep(0)
+        if len(found) == len(target):
+            break
     return found
 
 
@@ -158,14 +139,14 @@ def compute_relative(results, baseline):
     return {name: round(ink / base_ink * 100, 1) for name, ink in results.items()}
 
 
-def save_json(cfg, results, relative):
-    data = {}
+def save_json(cfg, results, relative, scan_seconds=0):
+    data = {"scan_time": f"{scan_seconds}s"}
     for name in sorted(results):
         data[name] = {
             "dark_pixels": results[name],
             "ink_vs_baseline": relative.get(name, "—"),
         }
-    cfg["output_dir"].mkdir(exist_ok=True)
+
     cfg["results_json"].write_text(json.dumps(data, indent=2), encoding="utf-8")
 
 
@@ -182,5 +163,5 @@ def save_docx(cfg, results, relative):
         row[0].text = name
         row[1].text = f"{ink:,}"
         row[2].text = str(relative.get(name, "—"))
-    cfg["output_dir"].mkdir(exist_ok=True)
+
     doc.save(str(cfg["results_docx"]))

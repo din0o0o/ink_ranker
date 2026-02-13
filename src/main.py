@@ -1,15 +1,15 @@
 import ctypes
-import os
 import threading
+import time
 import tkinter as tk
 from tkinter import ttk
 from engine import (
-    CONFIG_FILE,
+    BUNDLE_DIR,
     load_config, load_font_list, find_fonts,
-    process_font, compute_relative, save_json, save_docx, ensure_config,
+    process_font, compute_relative, save_json, save_docx,
 )
 
-__version__ = "1.0"
+__version__ = "1.1"
 
 GWL_EXSTYLE = -20
 WS_EX_APPWINDOW = 0x00040000
@@ -54,9 +54,9 @@ class InkRankerApp(tk.Tk):
         self._build_ui()
         self._center_window()
         self._show_on_taskbar()
-        # Blank icon
-        blank = tk.PhotoImage(width=1, height=1)
-        self.iconphoto(False, blank)
+        icon = tk.PhotoImage(file=str(BUNDLE_DIR / "icon.png"))
+        self.iconphoto(False, icon)
+        self._icon = icon
 
     def _show_on_taskbar(self):
         self.update_idletasks()
@@ -92,9 +92,6 @@ class InkRankerApp(tk.Tk):
         self.run_btn = ttk.Button(btn_frame, text="\u25b6", width=4, command=self._run)
         self.run_btn.pack(side="left", padx=4)
 
-        self.cfg_btn = ttk.Button(btn_frame, text="\u2699", width=4, command=self._open_config)
-        self.cfg_btn.pack(side="left", padx=4)
-
         self.progress = ProgressBar(frame, width=300, height=22)
         self.progress.pack(pady=(0, 4))
 
@@ -107,10 +104,6 @@ class InkRankerApp(tk.Tk):
         y = self.winfo_y() + e.y - self._drag_y
         self.geometry(f"+{x}+{y}")
 
-    def _open_config(self):
-        ensure_config()
-        os.startfile(str(CONFIG_FILE))
-
     def _run(self):
         if self._busy:
             return
@@ -119,11 +112,11 @@ class InkRankerApp(tk.Tk):
             return
         self._busy = True
         self.run_btn.configure(state="disabled")
-        self.cfg_btn.configure(state="disabled")
         self.progress.set(0, "Scanning fonts...")
         threading.Thread(target=self._worker, args=(cfg,), daemon=True).start()
 
     def _worker(self, cfg):
+        t0 = time.perf_counter()
         text = cfg["sample_text"].read_text(encoding="utf-8")
         names = load_font_list(cfg)
         fonts = find_fonts(cfg, names)
@@ -144,9 +137,11 @@ class InkRankerApp(tk.Tk):
             ink = process_font(text, path, font_idx, cfg)
             if ink is not None:
                 results[name] = ink
+            time.sleep(0)
 
+        elapsed = round(time.perf_counter() - t0)
         relative = compute_relative(results, baseline)
-        save_json(cfg, results, relative)
+        save_json(cfg, results, relative, scan_seconds=elapsed)
         save_docx(cfg, results, relative)
         self.after(0, self._done)
 
@@ -154,7 +149,6 @@ class InkRankerApp(tk.Tk):
         self.progress.set(100, "Done")
         self._busy = False
         self.run_btn.configure(state="normal")
-        self.cfg_btn.configure(state="normal")
 
 
 if __name__ == "__main__":
