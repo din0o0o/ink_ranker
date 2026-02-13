@@ -11,7 +11,7 @@ src/
 ├── engine.py                  ¤ Parsing fonts, rendering, counting dark pixels.
 ├── sample.txt                 ¤ Text for rendering.
 ├── fonts.txt                  ¤ List of >300 fonts.
-└── (output)                   ¤ Folder for scan output (.JSON, .docx)
+└── settings.py                ¤ Configurations called before compiling.
 ```
 
 #### $\color{#fff8dc}\text{Build from source:}$
@@ -21,17 +21,14 @@ pyinstaller InkRanker.spec
 
 </br></br>
 ## $\color{#adf137}\text{Configuration}$ </br>
-<code>config.ini</code> $\color{#fff8dc}\text{user configuration with default values:}$               
+<code>settings.py</code> $\color{#fff8dc}\text{for modifying values before compiling:}$               
 ```
-dpi                            ¤ Render resolution (300)
-font_size                      ¤ Point size (12)
-darkness_threshold             ¤ Dark pixel cutoff 0-255 (200)
-baseline_font                  ¤ Reference font for indexing (Arial)
-fonts_dir                      ¤ Path to user fonts (C:\Windows\Fonts)
-line_spacing_factor            ¤ Line height (1.15)
-sample_text                    ¤ Text for rendering (\sample.txt)
-fonts_list                     ¤ Font list (\fonts.txt)
-output_dir                     ¤ Output directory (\output)
+DPI = 300                           # render resolution
+FONT_SIZE = 12                      # point size for all fonts
+DARKNESS_THRESHOLD = 200            # greyscale cutoff 0-255
+BASELINE_FONT = "Arial"             # reference font for relative %
+FONTS_DIR = r"C:\Windows\Fonts"     # system fonts directory
+LINE_SPACING_FACTOR = 1.15          # line height multiplier
 ```
 
 </br></br>
@@ -40,6 +37,6 @@ output_dir                     ¤ Output directory (\output)
 1. Reads user font directory, matches with <code>fonts.txt</code> </br>
 2. Renders greyscale image with <code>sample.txt</code> for each item found, using Pillow. </br>
 3. Counts dark pixels in image using histogram. </br>
-4. Font name, dark pixel value and index against baseline font in <code>output/results.JSON</code>, ranked table in <code>output/results.docx</code>. </br>
+4. Outputs results in <code>results.JSON</code> and <code>results.docx</code>. </br>
 </ol> </br></br></br>
 
