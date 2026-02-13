@@ -1,4 +1,4 @@
-[![Download InkRanker](https://img.shields.io/github/v/release/din0o0o/ink_ranker?label=Download&{color=ffeb3b&labelColor=2d2d2d&style=for-the-badge)](https://github.com/din0o0o/ink_ranker/releases/latest)
+[![Download InkRanker](https://img.shields.io/github/v/release/din0o0o/ink_ranker?label=Download&color=ffeb3b&labelColor=2d2d2d&style=for-the-badge)](https://github.com/din0o0o/ink_ranker/releases/latest)
 
 > # $\color{#ffeb3b}\{\textbf{InkRanker}}$ 
 </br>
